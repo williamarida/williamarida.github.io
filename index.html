@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup and browser scaling -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Browser tab title -->
   <title>William Arida | Mechanical Engineering Portfolio</title>
+
+  <!-- Connects this HTML file to the main CSS stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- Sticky top navigation bar -->
   <header class="site-header">
     <nav class="navbar">
+      <!-- Site logo/name link back to homepage -->
       <a href="index.html" class="logo">William Arida</a>
 
+      <!-- Internal page navigation links -->
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
@@ -22,8 +29,9 @@
   </header>
 
   <main>
-    <!-- HERO SECTION -->
+    <!-- Homepage hero section: first thing visitors see -->
     <section class="hero">
+      <!-- Main hero text on the left -->
       <div class="hero-content">
         <p class="eyebrow">Mechanical Engineering • Robotics • Prototyping</p>
 
@@ -38,60 +46,71 @@
           iteration, and technical communication.
         </p>
 
+        <!-- Main call-to-action buttons -->
         <div class="hero-buttons">
           <a href="#projects" class="button primary-button">View Projects</a>
           <a href="#contact" class="button secondary-button">Contact</a>
         </div>
       </div>
 
-      <div class="hero-panel">
+      <!-- Right-side hero panel for visual interest and quick technical identity -->
+      <aside class="hero-panel">
         <p class="panel-label">Featured Focus</p>
+
         <h2>Design → Prototype → Test</h2>
+
         <p>
           Projects built around mechanical function, system constraints, and clear engineering decisions.
         </p>
 
+        <!-- Small skill/identity cards inside the hero panel -->
         <div class="mini-stats">
           <div>
             <span>CAD</span>
             <p>Mechanical design</p>
           </div>
+
           <div>
             <span>Controls</span>
             <p>Motors & actuation</p>
           </div>
+
           <div>
             <span>Builds</span>
             <p>Fabrication & testing</p>
           </div>
         </div>
-      </div>
+      </aside>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- Projects section: stacked chronological project cards -->
     <section id="projects" class="section">
+      <!-- Section title and intro text -->
       <div class="section-heading">
         <p class="eyebrow">Selected Work</p>
         <h2>Engineering Projects</h2>
         <p>
-          A collection of design, robotics, prototyping, and analysis projects.
+          A chronological collection of design, robotics, prototyping, and analysis projects.
         </p>
       </div>
 
+      <!-- Project list wrapper: cards stack from top to bottom -->
       <div class="project-grid">
-        <!-- CBI CAPSTONE PROJECT CARD -->
-        <article class="project-card featured-card">
-          <a href="projects/cbi_capstone/cbi_capstone.html" class="project-image-link">
-            <img 
-              src="projects/cbi_capstone/images/Full_Chamber_Assembly.jpg" 
-              alt="Full rat testing chamber assembly"
-              class="project-image"
-            >
-          </a>
 
+        <!-- Clickable project card: CBI Capstone -->
+        <a href="projects/cbi_capstone/cbi_capstone.html" class="project-card featured-card">
+          <!-- Project image on the left side of the card -->
+          <img
+            src="projects/cbi_capstone/images/Full_Chamber_Assembly.jpg"
+            alt="Full rat testing chamber assembly"
+            class="project-image"
+          >
+
+          <!-- Project text content on the right side of the card -->
           <div class="project-content">
+            <!-- Project date/category/status row -->
             <div class="project-topline">
-              <p class="project-category">Capstone Design • OSU CBI Lab</p>
+              <p class="project-category">2025–2026 • Capstone Design • OSU CBI Lab</p>
               <p class="project-status">Featured Project</p>
             </div>
 
@@ -103,6 +122,7 @@
               vertical sliding door mechanism.
             </p>
 
+            <!-- Technical tags help recruiters quickly scan project skills -->
             <div class="project-tags">
               <span>Mechanical Design</span>
               <span>Prototyping</span>
@@ -110,18 +130,19 @@
               <span>Fabrication</span>
             </div>
 
-            <a href="projects/cbi_capstone/cbi_capstone.html" class="project-link">
-              View Project →
-            </a>
+            <!-- This looks like a link, but the whole card is already clickable -->
+            <p class="project-link">View Project →</p>
           </div>
-        </article>
+        </a>
 
-        <!-- ROBOTIC ARM PROJECT CARD -->
+        <!-- Placeholder project card: Robotic Arm -->
         <article class="project-card">
+          <!-- Placeholder image area until a real project image is added -->
           <div class="project-image placeholder">
             Robotic Arm
           </div>
 
+          <!-- Project preview text -->
           <div class="project-content">
             <div class="project-topline">
               <p class="project-category">Robotics</p>
@@ -141,18 +162,18 @@
               <span>Simulation</span>
             </div>
 
-            <a href="#" class="project-link inactive-link">
-              Coming Soon
-            </a>
+            <p class="project-link inactive-link">Coming Soon</p>
           </div>
         </article>
 
-        <!-- GENERAL MECHATRONICS / MOTOR PROJECT CARD -->
+        <!-- Placeholder project card: Stepper Motor Mechanism -->
         <article class="project-card">
+          <!-- Placeholder image area until a real project image is added -->
           <div class="project-image placeholder">
             Mechatronics
           </div>
 
+          <!-- Project preview text -->
           <div class="project-content">
             <div class="project-topline">
               <p class="project-category">Electromechanical Systems</p>
@@ -172,16 +193,15 @@
               <span>Motion Control</span>
             </div>
 
-            <a href="#" class="project-link inactive-link">
-              Coming Soon
-            </a>
+            <p class="project-link inactive-link">Coming Soon</p>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
+    <!-- Skills section: quick technical scan area -->
     <section id="skills" class="section skills-section">
+      <!-- Section heading -->
       <div class="section-heading">
         <p class="eyebrow">Technical Areas</p>
         <h2>Skills & Tools</h2>
@@ -190,6 +210,7 @@
         </p>
       </div>
 
+      <!-- Skill tags -->
       <div class="skills-list">
         <span>SolidWorks</span>
         <span>CAD</span>
@@ -206,10 +227,12 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- Contact section: basic professional contact area -->
     <section id="contact" class="section contact-section">
+      <!-- Contact card creates a stronger visual endpoint for the page -->
       <div class="contact-card">
         <p class="eyebrow">Contact</p>
+
         <h2>Let’s connect.</h2>
 
         <p>
@@ -217,6 +240,7 @@
           prototype development, and engineering roles involving hands-on problem solving.
         </p>
 
+        <!-- Replace placeholder links with your real links later -->
         <div class="contact-links">
           <a href="mailto:your-email@example.com">Email</a>
           <a href="#">LinkedIn</a>
@@ -227,6 +251,7 @@
     </section>
   </main>
 
+  <!-- Footer at the bottom of the homepage -->
   <footer class="footer">
     <p>© 2026 William Arida. Engineering Portfolio.</p>
   </footer>
