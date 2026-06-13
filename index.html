@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>William Arida | Portfolio - Engineering</title>
+
+  <title>William Arida | Mechanical Engineering Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,98 +22,213 @@
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section class="hero">
-      <div class="hero-text">
-        <p class="eyebrow">Mechanical Engineering | Robotics | Controls</p>
-        <h1>Engineering projects built around design, testing, and practical problem solving.</h1>
+      <div class="hero-content">
+        <p class="eyebrow">Mechanical Engineering • Robotics • Prototyping</p>
+
+        <h1>
+          Engineering portfolio focused on mechanisms, mechatronics, and practical design.
+        </h1>
+
         <p class="hero-description">
-          I’m a mechanical engineering graduate interested in robotics, mechatronics,
-          prototype design, controls, and hands-on engineering development.
+          Mechanical engineering graduate with experience in prototype development,
+          electromechanical systems, CAD, fabrication, and engineering problem solving.
+          This portfolio highlights projects involving design constraints, testing,
+          iteration, and technical communication.
         </p>
 
         <div class="hero-buttons">
           <a href="#projects" class="button primary-button">View Projects</a>
-          <a href="#contact" class="button secondary-button">Contact Me</a>
+          <a href="#contact" class="button secondary-button">Contact</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <p class="panel-label">Featured Focus</p>
+        <h2>Design → Prototype → Test</h2>
+        <p>
+          Projects built around mechanical function, system constraints, and clear engineering decisions.
+        </p>
+
+        <div class="mini-stats">
+          <div>
+            <span>CAD</span>
+            <p>Mechanical design</p>
+          </div>
+          <div>
+            <span>Controls</span>
+            <p>Motors & actuation</p>
+          </div>
+          <div>
+            <span>Builds</span>
+            <p>Fabrication & testing</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="section">
       <div class="section-heading">
         <p class="eyebrow">Selected Work</p>
         <h2>Engineering Projects</h2>
+        <p>
+          A collection of design, robotics, prototyping, and analysis projects.
+        </p>
       </div>
 
       <div class="project-grid">
-        <article class="project-card">
-          <div class="project-image placeholder">Image Coming Soon</div>
+        <!-- CBI CAPSTONE PROJECT CARD -->
+        <article class="project-card featured-card">
+          <a href="projects/cbi_capstone/cbi_capstone.html" class="project-image-link">
+            <img 
+              src="projects/cbi_capstone/images/Full_Chamber_Assembly.jpg" 
+              alt="Full rat testing chamber assembly"
+              class="project-image"
+            >
+          </a>
+
           <div class="project-content">
-            <h3>CBI Rat Testing Chamber</h3>
+            <div class="project-topline">
+              <p class="project-category">Capstone Design • OSU CBI Lab</p>
+              <p class="project-status">Featured Project</p>
+            </div>
+
+            <h3>Rat Social-Interaction Testing Chamber</h3>
+
             <p>
-              Capstone project for OSU’s CBI Lab focused on designing a controlled testing chamber 
-              for rat-based social interaction experiments involving brain injuries.
+              Designed a testing chamber component for rat-based neuroscience experiments,
+              focusing on controlled access, visual contact, animal safety, and a reliable
+              vertical sliding door mechanism.
             </p>
-            <a href="projects/cbi-rat-testing-chamber.html" class="project-link">View Project →</a>
+
+            <div class="project-tags">
+              <span>Mechanical Design</span>
+              <span>Prototyping</span>
+              <span>Actuation</span>
+              <span>Fabrication</span>
+            </div>
+
+            <a href="projects/cbi_capstone/cbi_capstone.html" class="project-link">
+              View Project →
+            </a>
           </div>
         </article>
 
+        <!-- ROBOTIC ARM PROJECT CARD -->
         <article class="project-card">
-          <div class="project-image placeholder">Image Coming Soon</div>
+          <div class="project-image placeholder">
+            Robotic Arm
+          </div>
+
           <div class="project-content">
-            <h3>MuJoCo Control Simulation</h3>
+            <div class="project-topline">
+              <p class="project-category">Robotics</p>
+              <p class="project-status">In Progress</p>
+            </div>
+
+            <h3>Robotic Arm Project</h3>
+
             <p>
-              Robotics simulation work comparing control methods such as PD,
-              feedforward, and model-based control.
+              Project page reserved for robotic arm design, control, simulation,
+              or mechanism work. This will be expanded as project materials are added.
             </p>
-            <a href="#" class="project-link">View Project →</a>
+
+            <div class="project-tags">
+              <span>Robotics</span>
+              <span>Controls</span>
+              <span>Simulation</span>
+            </div>
+
+            <a href="#" class="project-link inactive-link">
+              Coming Soon
+            </a>
           </div>
         </article>
 
+        <!-- GENERAL MECHATRONICS / MOTOR PROJECT CARD -->
         <article class="project-card">
-          <div class="project-image placeholder">Image Coming Soon</div>
+          <div class="project-image placeholder">
+            Mechatronics
+          </div>
+
           <div class="project-content">
+            <div class="project-topline">
+              <p class="project-category">Electromechanical Systems</p>
+              <p class="project-status">Planned</p>
+            </div>
+
             <h3>Stepper Motor Mechanism</h3>
+
             <p>
-              Electromechanical actuation project using a NEMA 17 stepper motor,
-              TB6600 driver, and Arduino control logic.
+              Electromechanical actuation work involving a NEMA 17 stepper motor,
+              driver hardware, motion control logic, and mechanism-level design constraints.
             </p>
-            <a href="#" class="project-link">View Project →</a>
+
+            <div class="project-tags">
+              <span>NEMA 17</span>
+              <span>Arduino</span>
+              <span>Motion Control</span>
+            </div>
+
+            <a href="#" class="project-link inactive-link">
+              Coming Soon
+            </a>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="skills" class="section light-section">
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section skills-section">
       <div class="section-heading">
         <p class="eyebrow">Technical Areas</p>
         <h2>Skills & Tools</h2>
+        <p>
+          Tools and engineering areas represented across my project work.
+        </p>
       </div>
 
       <div class="skills-list">
         <span>SolidWorks</span>
+        <span>CAD</span>
+        <span>Mechanical Design</span>
         <span>MATLAB</span>
         <span>Python</span>
         <span>Arduino</span>
         <span>Controls</span>
         <span>Robotics</span>
         <span>3D Printing</span>
+        <span>Fabrication</span>
         <span>Data Analysis</span>
+        <span>Technical Communication</span>
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact" class="section contact-section">
-      <h2>Contact</h2>
-      <p>
-        Interested in robotics, mechanical design, mechatronics, controls,
-        and prototype development roles.
-      </p>
+      <div class="contact-card">
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s connect.</h2>
 
-      <div class="contact-links">
-        <a href="mailto:your-email@example.com">Email Me</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
+        <p>
+          Interested in mechanical design, robotics, mechatronics, controls,
+          prototype development, and engineering roles involving hands-on problem solving.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:your-email@example.com">Email</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+          <a href="#">Resume</a>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <p>© 2026 William Arida. Engineering Portfolio.</p>
+  </footer>
 </body>
 </html>
