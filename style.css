@@ -1,5 +1,6 @@
 /* =========================
    GLOBAL DESIGN SYSTEM
+   These variables control the site's main colors, spacing, shadows, and sizing.
    ========================= */
 
 :root {
@@ -27,14 +28,17 @@
   --radius-sm: 12px;
 }
 
+/* Universal box sizing makes width and padding easier to control. */
 * {
   box-sizing: border-box;
 }
 
+/* Smooth scrolling makes navbar links glide to page sections. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Main page body styling: dark background, default font, and readable line spacing. */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -46,11 +50,13 @@ body {
   line-height: 1.6;
 }
 
+/* Keeps images responsive and prevents weird inline spacing. */
 img {
   max-width: 100%;
   display: block;
 }
 
+/* Removes default link styling so links can look like cards/buttons. */
 a {
   color: inherit;
   text-decoration: none;
@@ -58,8 +64,10 @@ a {
 
 /* =========================
    HEADER / NAVIGATION
+   Sticky top navigation bar with a glassy dark background.
    ========================= */
 
+/* Header stays at the top while scrolling. */
 .site-header {
   position: sticky;
   top: 0;
@@ -70,6 +78,7 @@ a {
   backdrop-filter: blur(18px);
 }
 
+/* Navbar controls the horizontal layout of the logo and links. */
 .navbar {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -79,6 +88,7 @@ a {
   align-items: center;
 }
 
+/* Logo/name styling on the left side of the navbar. */
 .logo {
   display: inline-flex;
   align-items: center;
@@ -87,6 +97,7 @@ a {
   letter-spacing: 0.02em;
 }
 
+/* Small glowing dot before the logo for a technical accent. */
 .logo::before {
   content: "";
   width: 10px;
@@ -97,6 +108,7 @@ a {
   box-shadow: 0 0 18px rgba(56, 217, 255, 0.9);
 }
 
+/* Container for the navbar links. */
 .nav-links {
   display: flex;
   gap: 24px;
@@ -104,11 +116,13 @@ a {
   color: var(--text-muted);
 }
 
+/* Individual nav link hover setup. */
 .nav-links a {
   position: relative;
   transition: color 0.2s ease;
 }
 
+/* Animated underline hidden by default. */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -120,18 +134,22 @@ a {
   transition: width 0.2s ease;
 }
 
+/* Makes nav links brighter on hover. */
 .nav-links a:hover {
   color: var(--text-main);
 }
 
+/* Expands the underline on hover. */
 .nav-links a:hover::after {
   width: 100%;
 }
 
 /* =========================
    HOMEPAGE HERO
+   Large opening section with main intro and right-side feature panel.
    ========================= */
 
+/* Main hero layout: text on left, panel on right. */
 .hero {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -142,11 +160,13 @@ a {
   align-items: center;
 }
 
+/* Limits the width of hero text so it stays readable. */
 .hero-content,
 .hero-text {
   max-width: 760px;
 }
 
+/* Small uppercase label used above section titles. */
 .eyebrow {
   margin: 0 0 14px;
   color: var(--accent);
@@ -156,6 +176,7 @@ a {
   letter-spacing: 0.16em;
 }
 
+/* Main hero headline. */
 .hero h1 {
   margin: 0;
   font-size: clamp(2.5rem, 6vw, 5.05rem);
@@ -163,6 +184,7 @@ a {
   letter-spacing: -0.06em;
 }
 
+/* Supporting paragraph below the hero headline. */
 .hero-description {
   max-width: 690px;
   margin-top: 28px;
@@ -170,6 +192,7 @@ a {
   font-size: 1.08rem;
 }
 
+/* Container for hero buttons. */
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -177,6 +200,7 @@ a {
   margin-top: 34px;
 }
 
+/* Shared button styling. */
 .button {
   display: inline-flex;
   align-items: center;
@@ -192,33 +216,42 @@ a {
     background 0.2s ease;
 }
 
+/* Slight lift when hovering over buttons. */
 .button:hover {
   transform: translateY(-2px);
 }
 
+/* Main bright call-to-action button. */
 .primary-button {
   color: #061018;
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   box-shadow: 0 14px 42px rgba(56, 217, 255, 0.24);
 }
 
+/* Stronger glow on primary button hover. */
 .primary-button:hover {
   box-shadow: 0 18px 60px rgba(56, 217, 255, 0.38);
 }
 
+/* Secondary outline button. */
 .secondary-button {
   color: var(--text-main);
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.045);
 }
 
+/* Secondary button hover styling. */
 .secondary-button:hover {
   border-color: var(--border-strong);
   background: rgba(56, 217, 255, 0.08);
 }
 
-/* Optional right-side hero panel from the newer index.html */
+/* =========================
+   HERO PANEL
+   Right-side card that adds visual interest and summarizes your engineering process.
+   ========================= */
 
+/* Main hero panel card. */
 .hero-panel {
   position: relative;
   overflow: hidden;
@@ -231,6 +264,7 @@ a {
   box-shadow: var(--shadow);
 }
 
+/* Subtle gradient overlay inside the hero panel. */
 .hero-panel::before {
   content: "";
   position: absolute;
@@ -242,11 +276,13 @@ a {
   pointer-events: none;
 }
 
+/* Keeps panel text above the gradient overlay. */
 .hero-panel > * {
   position: relative;
   z-index: 1;
 }
 
+/* Small label inside the hero panel. */
 .panel-label {
   display: inline-flex;
   margin: 0 0 22px;
@@ -259,6 +295,7 @@ a {
   font-weight: 900;
 }
 
+/* Hero panel heading. */
 .hero-panel h2 {
   margin: 0 0 12px;
   font-size: 2rem;
@@ -266,16 +303,19 @@ a {
   letter-spacing: -0.04em;
 }
 
+/* Hero panel paragraph text. */
 .hero-panel p {
   color: var(--text-muted);
 }
 
+/* Container for the small stacked stat cards. */
 .mini-stats {
   display: grid;
   gap: 12px;
   margin-top: 26px;
 }
 
+/* Individual mini-stat card. */
 .mini-stats div {
   padding: 15px;
   border: 1px solid var(--border);
@@ -283,6 +323,7 @@ a {
   background: rgba(8, 13, 20, 0.46);
 }
 
+/* Mini-stat title text. */
 .mini-stats span {
   display: block;
   margin-bottom: 3px;
@@ -290,6 +331,7 @@ a {
   font-weight: 900;
 }
 
+/* Mini-stat description text. */
 .mini-stats p {
   margin: 0;
   font-size: 0.9rem;
@@ -297,19 +339,23 @@ a {
 
 /* =========================
    GENERAL SECTIONS
+   Shared spacing and heading styles for major page sections.
    ========================= */
 
+/* Main section wrapper used for projects, skills, and contact. */
 .section {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 74px 24px;
 }
 
+/* Section heading block. */
 .section-heading {
   max-width: 760px;
   margin-bottom: 34px;
 }
 
+/* Main section heading text. */
 .section-heading h2 {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3.2rem);
@@ -317,6 +363,7 @@ a {
   letter-spacing: -0.045em;
 }
 
+/* Supporting paragraph under section headings. */
 .section-heading p:last-child {
   margin-top: 16px;
   color: var(--text-muted);
@@ -324,20 +371,26 @@ a {
 
 /* =========================
    STACKED HORIZONTAL PROJECT CARDS
+   Wide project cards stacked vertically, with image left and text right.
    ========================= */
 
+/* Project list container: one project per row. */
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 22px;
 }
 
+/* Main project card layout. Can be used on <a> or <article>. */
 .project-card {
   position: relative;
   overflow: hidden;
   min-height: 245px;
   display: grid;
   grid-template-columns: 330px minmax(0, 1fr);
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background:
@@ -350,6 +403,7 @@ a {
     border-color 0.22s ease;
 }
 
+/* Subtle glow overlay hidden until hover. */
 .project-card::before {
   content: "";
   position: absolute;
@@ -362,26 +416,24 @@ a {
   pointer-events: none;
 }
 
+/* Project card hover movement and border glow. */
 .project-card:hover {
   transform: translateY(-5px);
   border-color: rgba(56, 217, 255, 0.38);
   box-shadow: 0 28px 85px rgba(0, 0, 0, 0.40);
 }
 
+/* Turns on the glow overlay when hovering over a card. */
 .project-card:hover::before {
   opacity: 1;
 }
 
+/* Featured card currently behaves like the others, but this class lets us style it later if needed. */
 .featured-card {
   grid-column: auto;
 }
 
-.project-image-link {
-  display: block;
-  overflow: hidden;
-  min-height: 100%;
-}
-
+/* Project image styling for real images. */
 .project-image {
   width: 100%;
   height: 100%;
@@ -394,11 +446,13 @@ a {
     filter 0.35s ease;
 }
 
+/* Slight image zoom on card hover. */
 .project-card:hover .project-image {
   transform: scale(1.045);
   filter: brightness(1.08) contrast(1.03);
 }
 
+/* Placeholder image block for projects without images yet. */
 .placeholder {
   width: 100%;
   height: 100%;
@@ -422,6 +476,7 @@ a {
     var(--bg-card-light);
 }
 
+/* Right-side project text area. */
 .project-content {
   position: relative;
   z-index: 1;
@@ -431,6 +486,7 @@ a {
   justify-content: center;
 }
 
+/* Top metadata row inside each project card. */
 .project-topline {
   display: flex;
   justify-content: space-between;
@@ -439,6 +495,7 @@ a {
   margin-bottom: 12px;
 }
 
+/* Shared small uppercase metadata style. */
 .project-category,
 .project-status {
   margin: 0;
@@ -448,10 +505,12 @@ a {
   letter-spacing: 0.12em;
 }
 
+/* Project category/date text. */
 .project-category {
   color: var(--accent);
 }
 
+/* Project status pill. */
 .project-status {
   padding: 5px 8px;
   border-radius: 999px;
@@ -461,6 +520,7 @@ a {
   white-space: nowrap;
 }
 
+/* Project title. */
 .project-content h3 {
   margin: 0 0 10px;
   font-size: clamp(1.45rem, 3vw, 2.15rem);
@@ -468,12 +528,14 @@ a {
   letter-spacing: -0.04em;
 }
 
+/* Project description paragraph. */
 .project-content p {
   max-width: 660px;
   margin-top: 0;
   color: var(--text-muted);
 }
 
+/* Technical tag container. */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -481,6 +543,7 @@ a {
   margin: 14px 0 18px;
 }
 
+/* Shared tag styling for project tags and skill tags. */
 .project-tags span,
 .skills-list span {
   display: inline-flex;
@@ -495,9 +558,11 @@ a {
   font-weight: 750;
 }
 
+/* Project link-style text at bottom of cards. */
 .project-link {
   display: inline-flex;
   width: fit-content;
+  margin-bottom: 0;
   color: var(--accent-strong);
   font-weight: 900;
   transition:
@@ -505,26 +570,29 @@ a {
     color 0.2s ease;
 }
 
-.project-link:hover {
+/* Moves the project link text slightly right on hover. */
+.project-card:hover .project-link {
   transform: translateX(4px);
   color: var(--text-main);
 }
 
+/* Styling for coming soon links/cards. */
 .inactive-link {
   color: var(--text-muted);
-  cursor: not-allowed;
+  cursor: default;
 }
 
-.inactive-link:hover {
-  transform: none;
-  color: var(--text-muted);
+/* Prevents unfinished cards from pretending to be clickable links. */
+article.project-card {
+  cursor: default;
 }
 
 /* =========================
    SKILLS SECTION
+   Technical skills shown as small pill-shaped tags.
    ========================= */
 
-.light-section,
+/* Full-width skills band with subtle borders. */
 .skills-section {
   max-width: none;
   border-top: 1px solid var(--border);
@@ -533,8 +601,7 @@ a {
     linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
 }
 
-.light-section .section-heading,
-.light-section .skills-list,
+/* Keeps skills section content aligned with the rest of the site. */
 .skills-section .section-heading,
 .skills-section .skills-list {
   max-width: var(--max-width);
@@ -542,12 +609,14 @@ a {
   margin-right: auto;
 }
 
+/* Skill tag layout. */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
+/* Skill tag hover animation. */
 .skills-list span {
   transition:
     transform 0.2s ease,
@@ -555,6 +624,7 @@ a {
     background 0.2s ease;
 }
 
+/* Skill tags lift and glow slightly on hover. */
 .skills-list span:hover {
   transform: translateY(-3px);
   border-color: rgba(56, 217, 255, 0.42);
@@ -563,32 +633,15 @@ a {
 
 /* =========================
    CONTACT SECTION
+   Final call-to-action area with email, LinkedIn, GitHub, and resume links.
    ========================= */
 
+/* Main contact section spacing. */
 .contact-section {
-  text-align: center;
   padding-bottom: 86px;
 }
 
-.contact-section > h2,
-.contact-section > p,
-.contact-section > .contact-links {
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.contact-section h2 {
-  margin-top: 0;
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -0.04em;
-}
-
-.contact-section p {
-  color: var(--text-muted);
-  margin-bottom: 24px;
-}
-
+/* Large contact card wrapper. */
 .contact-card {
   padding: 38px;
   border-radius: var(--radius-lg);
@@ -601,28 +654,29 @@ a {
   text-align: left;
 }
 
+/* Contact card heading. */
 .contact-card h2 {
   margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
 }
 
+/* Contact card paragraph. */
 .contact-card p {
   max-width: 720px;
-  margin-left: 0;
-  margin-right: 0;
+  color: var(--text-muted);
 }
 
+/* Contact link button row. */
 .contact-links {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 12px;
-}
-
-.contact-card .contact-links {
-  justify-content: flex-start;
   margin-top: 26px;
 }
 
+/* Individual contact buttons. */
 .contact-links a {
   padding: 11px 14px;
   border-radius: 999px;
@@ -636,6 +690,7 @@ a {
     background 0.2s ease;
 }
 
+/* Contact button hover effect. */
 .contact-links a:hover {
   transform: translateY(-2px);
   border-color: rgba(56, 217, 255, 0.45);
@@ -644,8 +699,10 @@ a {
 
 /* =========================
    FOOTER
+   Small bottom section of the page.
    ========================= */
 
+/* Footer styling. */
 .footer {
   padding: 28px 24px;
   border-top: 1px solid var(--border);
@@ -655,9 +712,11 @@ a {
 }
 
 /* =========================
-   INDIVIDUAL PROJECT PAGES
+   INDIVIDUAL PROJECT PAGE STYLES
+   These styles support pages like projects/cbi_capstone/cbi_capstone.html.
    ========================= */
 
+/* Project page hero section. */
 .project-hero {
   color: white;
   padding: 92px 24px;
@@ -666,6 +725,7 @@ a {
     linear-gradient(135deg, #0b1220, #111d2f);
 }
 
+/* Keeps project hero text aligned and readable. */
 .project-hero h1,
 .project-hero p,
 .project-hero .eyebrow {
@@ -674,6 +734,7 @@ a {
   margin-right: auto;
 }
 
+/* Project page main title. */
 .project-hero h1 {
   font-size: clamp(2.4rem, 6vw, 4.3rem);
   line-height: 1.02;
@@ -682,17 +743,20 @@ a {
   margin-bottom: 24px;
 }
 
+/* Project page hero paragraph. */
 .project-hero p {
   color: var(--text-soft);
   font-size: 1.15rem;
 }
 
+/* Main project page content wrapper. */
 .project-page {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 80px 24px;
 }
 
+/* Project page layout: main writing on left, sidebar on right. */
 .project-detail-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) 320px;
@@ -700,6 +764,7 @@ a {
   align-items: start;
 }
 
+/* Project page section headings. */
 .project-page h2 {
   margin-top: 42px;
   margin-bottom: 12px;
@@ -707,19 +772,23 @@ a {
   letter-spacing: -0.025em;
 }
 
+/* Removes extra top margin from the first project page heading. */
 .project-page h2:first-child {
   margin-top: 0;
 }
 
+/* Project page body text. */
 .project-page p,
 .project-page li {
   color: var(--text-muted);
 }
 
+/* Project page bullet list spacing. */
 .project-page ul {
   padding-left: 1.25rem;
 }
 
+/* Sidebar container on project pages. */
 .project-sidebar {
   display: grid;
   gap: 18px;
@@ -727,6 +796,7 @@ a {
   top: 96px;
 }
 
+/* Individual sidebar cards on project pages. */
 .sidebar-card {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -737,66 +807,82 @@ a {
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.24);
 }
 
+/* Sidebar card heading. */
 .sidebar-card h3 {
   margin-top: 0;
   margin-bottom: 8px;
 }
 
+/* Sidebar card paragraph. */
 .sidebar-card p {
   margin-bottom: 0;
 }
 
 /* =========================
-   MOBILE LAYOUT
+   RESPONSIVE DESIGN
+   Layout changes for tablets and smaller screens.
    ========================= */
 
+/* Tablet layout adjustments. */
 @media (max-width: 920px) {
+  /* Hero becomes one column instead of two. */
   .hero {
     grid-template-columns: 1fr;
     padding-top: 78px;
   }
 
+  /* Project cards keep horizontal layout but shrink the image column. */
   .project-card {
     grid-template-columns: 260px minmax(0, 1fr);
   }
 
+  /* Project pages become single-column. */
   .project-detail-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Sidebar stops sticking on smaller screens. */
   .project-sidebar {
     position: static;
   }
 }
 
+/* Phone layout adjustments. */
 @media (max-width: 720px) {
+  /* Navbar stacks vertically on small screens. */
   .navbar {
     align-items: flex-start;
     flex-direction: column;
     gap: 14px;
   }
 
+  /* Nav links wrap if needed. */
   .nav-links {
     flex-wrap: wrap;
     gap: 16px;
   }
 
+  /* Hero section gets tighter spacing on phones. */
   .hero {
     padding: 62px 20px 56px;
   }
 
+  /* General sections get tighter spacing on phones. */
   .section {
     padding: 56px 20px;
   }
 
+  /* Keeps the hero headline large but manageable on phones. */
   .hero h1 {
     font-size: clamp(2.35rem, 14vw, 4rem);
   }
 
+  /* Project cards become vertical on phones: image above text. */
   .project-card {
     grid-template-columns: 1fr;
   }
 
+  /* Images lose right border and gain bottom border when stacked. */
   .project-image,
   .placeholder {
     min-height: 220px;
@@ -804,15 +890,18 @@ a {
     border-bottom: 1px solid var(--border);
   }
 
+  /* Project card text gets slightly smaller padding on phones. */
   .project-content {
     padding: 24px;
   }
 
+  /* Project metadata stacks on phones. */
   .project-topline {
     align-items: flex-start;
     flex-direction: column;
   }
 
+  /* Hero panel and contact card get smaller padding on phones. */
   .hero-panel,
   .contact-card {
     padding: 24px;
