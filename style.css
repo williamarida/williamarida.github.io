@@ -151,14 +151,22 @@ a {
 
 /* Main hero layout. */
 .hero {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  max-width: none;
   padding: 105px 24px 58px;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
 }
 
 /* Limits the width of hero text so it stays readable. */
 .hero-content,
 .hero-text {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content > * {
   max-width: 760px;
 }
 
@@ -530,11 +538,16 @@ article.project-card {
 /* Individual contact buttons. */
 .contact-links a,
 .contact-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 11px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--text-soft);
   background: rgba(255, 255, 255, 0.045);
+  appearance: none;
+  -webkit-appearance: none;
   font: inherit;
   font-weight: 800;
   cursor: pointer;
