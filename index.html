@@ -46,48 +46,14 @@
           and technical communication.
         </p>
 
-        <!-- Main call-to-action buttons -->
-        <div class="hero-buttons">
-          <a href="#projects" class="button primary-button">View Projects</a>
-          <a href="#contact" class="button secondary-button">Contact</a>
-        </div>
       </div>
-
-      <!-- Right-side hero panel for visual interest and quick technical identity -->
-      <aside class="hero-panel">
-        <p class="panel-label">Featured Focus</p>
-
-        <h2>Design → Prototype → Test</h2>
-
-        <p>
-          Projects built around mechanical function, system constraints, and clear engineering decisions.
-        </p>
-
-        <!-- Small skill/identity cards inside the hero panel -->
-        <div class="mini-stats">
-          <div>
-            <span>CAD</span>
-            <p>Mechanical design</p>
-          </div>
-
-          <div>
-            <span>Controls</span>
-            <p>Motors & actuation</p>
-          </div>
-
-          <div>
-            <span>Builds</span>
-            <p>Fabrication & testing</p>
-          </div>
-        </div>
-      </aside>
     </section>
 
     <!-- Projects section: stacked chronological project cards -->
     <section id="projects" class="section">
       <!-- Section title and intro text -->
       <div class="section-heading">
-        <p class="eyebrow">Selected Work</p>
+        <p class="eyebrow">Experience</p>
         <h2>Engineering Projects</h2>
         <p>
           A chronological collection of design, robotics, prototyping, and analysis projects.
@@ -110,24 +76,23 @@
           <div class="project-content">
             <!-- Project date/category/status row -->
             <div class="project-topline">
-              <p class="project-category">2025–2026 • Capstone Design • OSU CBI Lab</p>
+              <p class="project-category">Capstone Design • OSU Neuroscience CBI Lab • 2025–2026</p>
               <p class="project-status">Featured Project</p>
             </div>
 
-            <h3>Rat Social-Interaction Testing Chamber</h3>
+            <h3>Social Operant Testing Chamber</h3>
 
             <p>
-              Designed a testing chamber component for rat-based neuroscience experiments,
-              focusing on controlled access, visual contact, animal safety, and a reliable
-              vertical sliding door mechanism.
+              Designed, testing chamber for social neuroscience in rat based testing,
+              focusing on automation, animal safety, and controlled experimental conditions.
             </p>
 
             <!-- Technical tags help recruiters quickly scan project skills -->
             <div class="project-tags">
-              <span>Mechanical Design</span>
               <span>Prototyping</span>
-              <span>Actuation</span>
-              <span>Fabrication</span>
+              <span>Automation</span>
+              <span>3D Printing</span>
+              <span>Metal Fabrication</span>
             </div>
 
             <!-- This looks like a link, but the whole card is already clickable -->
@@ -203,11 +168,8 @@
     <section id="skills" class="section skills-section">
       <!-- Section heading -->
       <div class="section-heading">
-        <p class="eyebrow">Technical Areas</p>
+        <p class="eyebrow">Technical Skills</p>
         <h2>Skills & Tools</h2>
-        <p>
-          Tools and engineering areas represented across my project work.
-        </p>
       </div>
 
       <!-- Skill tags -->
@@ -235,18 +197,17 @@
 
         <h2>Let’s connect.</h2>
 
-        <p>
-          Interested in mechanical design, robotics, mechatronics, controls,
-          prototype development, and engineering roles involving hands-on problem solving.
-        </p>
-
-        <!-- Replace placeholder links with your real links later -->
         <div class="contact-links">
-          <a href="mailto:your-email@example.com">Email</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">GitHub</a>
-          <a href="#">Resume</a>
+          <button type="button" class="contact-action" id="copy-email">Email</button>
+          <a href="William%20R.%20Arida%20Resume.pdf" target="_blank" rel="noopener">Resume</a>
+          <a href="https://www.linkedin.com/in/william-arida/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/williamarida" target="_blank" rel="noopener">GitHub</a>
         </div>
+
+        <p class="email-reveal" id="email-reveal" hidden>
+          <span id="email-copy-status">Copied:</span>
+          <span class="email-address">william.arida228@gmail.com</span>
+        </p>
       </div>
     </section>
   </main>
@@ -255,5 +216,25 @@
   <footer class="footer">
     <p>© 2026 William Arida. Engineering Portfolio.</p>
   </footer>
+
+  <script>
+    const emailButton = document.getElementById("copy-email");
+    const emailReveal = document.getElementById("email-reveal");
+    const emailStatus = document.getElementById("email-copy-status");
+    const emailAddress = "william.arida228@gmail.com";
+
+    emailButton.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(emailAddress);
+        emailStatus.textContent = "Copied:";
+      } catch {
+        emailStatus.textContent = "Email:";
+      }
+
+      emailButton.textContent = "Email Copied";
+      emailButton.classList.add("is-copied");
+      emailReveal.hidden = false;
+    });
+  </script>
 </body>
 </html>
