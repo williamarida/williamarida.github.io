@@ -691,23 +691,20 @@ article.project-card {
 /* Feature/image pairings for project design features. */
 .project-feature-showcase {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-top: 18px;
 }
 
+.project-feature-column {
+  display: grid;
+  gap: 18px;
+}
+
 .project-feature-item {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(240px, 0.75fr);
-  gap: 18px;
-  align-items: center;
-}
-
-.project-feature-item:nth-child(even) {
-  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 0.95fr);
-}
-
-.project-feature-item:nth-child(even) .feature-bubble {
-  order: 2;
+  gap: 10px;
+  align-content: start;
 }
 
 .feature-bubble {
@@ -727,7 +724,7 @@ article.project-card {
 .project-feature-item img,
 .fabrication-strip img {
   width: 100%;
-  min-height: 180px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -736,13 +733,15 @@ article.project-card {
 }
 
 .project-feature-item img {
-  height: 100%;
+  height: auto;
 }
 
 .feature-image-small {
-  width: 50%;
+  width: 33%;
   min-width: 150px;
   justify-self: center;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 .feature-image-slightly-small {
@@ -784,8 +783,7 @@ article.project-card {
   }
 
   .project-hero-with-image,
-  .project-feature-item,
-  .project-feature-item:nth-child(even),
+  .project-feature-showcase,
   .fabrication-strip {
     grid-template-columns: 1fr;
   }
@@ -798,9 +796,6 @@ article.project-card {
     max-width: none;
   }
 
-  .project-feature-item:nth-child(even) .feature-bubble {
-    order: 0;
-  }
 }
 
 /* Phone layout adjustments. */
