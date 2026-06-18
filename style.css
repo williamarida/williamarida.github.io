@@ -696,7 +696,7 @@ article.project-card {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(240px, 0.75fr);
   gap: 18px;
-  align-items: stretch;
+  align-items: center;
 }
 
 .project-feature-item:nth-child(even) {
@@ -708,12 +708,15 @@ article.project-card {
 }
 
 .feature-bubble {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  justify-self: center;
+  width: fit-content;
+  max-width: min(100%, 520px);
   margin: 0;
-  padding: 16px 18px;
+  padding: 12px 16px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: 999px;
   color: var(--text-soft);
   background: rgba(255, 255, 255, 0.045);
 }
@@ -731,6 +734,17 @@ article.project-card {
 
 .project-feature-item img {
   height: 100%;
+}
+
+.feature-image-small {
+  width: 50%;
+  min-width: 150px;
+  justify-self: center;
+}
+
+.feature-image-slightly-small {
+  width: 90%;
+  justify-self: center;
 }
 
 /* Keeps project-specific skill bubbles close to their heading. */
