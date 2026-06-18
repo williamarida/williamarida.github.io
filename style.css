@@ -668,6 +668,28 @@ article.project-card {
   padding-left: 1.25rem;
 }
 
+/* Vertical bubble list for project design features. */
+.project-feature-list {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-feature-list li {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+/* Keeps project-specific skill bubbles close to their heading. */
+.project-skill-list {
+  margin-top: 16px;
+}
+
 /* Sidebar container on project pages. */
 .project-sidebar {
   display: grid;
