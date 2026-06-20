@@ -762,6 +762,9 @@ article.project-card {
 }
 
 .fabrication-strip img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: top center;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
@@ -957,22 +960,24 @@ article.project-card {
     font-size: clamp(2.35rem, 14vw, 4rem);
   }
 
-  /* Project cards become vertical on phones: image above text. */
+  /* Project cards keep the desktop image/text split on phones. */
   .project-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(108px, 36%) minmax(0, 1fr);
+    min-height: 0;
   }
 
-  /* Images lose right border and gain bottom border when stacked. */
+  /* Images stay in their own column so card text never sits over them. */
   .project-image,
   .placeholder {
-    min-height: 220px;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
+    min-height: 0;
+    height: 100%;
+    border-right: 1px solid var(--border);
+    border-bottom: none;
   }
 
   /* Project card text gets slightly smaller padding on phones. */
   .project-content {
-    padding: 24px;
+    padding: 18px;
   }
 
   /* Project metadata stacks on phones. */
