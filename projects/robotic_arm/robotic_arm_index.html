@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4-DOF Robotic Arm | William Arida</title>
+  <link rel="stylesheet" href="../../style.css?v=20260620-robotic-arm">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="../../index.html" class="logo">William Arida</a>
+
+      <div class="nav-links">
+        <a href="../../index.html#projects">Projects</a>
+        <a href="../../index.html#skills">Skills</a>
+        <a href="../../index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-hero">
+      <div class="project-hero-with-image">
+        <div class="project-hero-copy">
+          <p class="eyebrow">Robotics / Kinematics / Mechatronics</p>
+          <h1>4-DOF Robotic Arm</h1>
+          <p>
+            A competition-focused robotic arm designed around a closed four-bar linkage, 3D printed
+            structure, servo actuation, stepper-driven base rotation, and Arduino-based motion control.
+          </p>
+        </div>
+
+        <img
+          src="images/Full_Body.jpeg"
+          alt="Full assembled 4 degree of freedom robotic arm prototype"
+          class="project-hero-image"
+        >
+      </div>
+    </section>
+
+    <section class="project-page">
+      <div class="project-detail-grid">
+        <div class="project-main-flow">
+          <h2>Engineering Problem</h2>
+          <p>
+            The goal of this project was to design, fabricate, and control a 4 degree of freedom robotic
+            arm capable of completing a sequence of competition tasks. The arm needed enough workspace
+            to reach objects in the task area, enough payload capacity to lift blocks and a pen, and
+            enough motion control accuracy to pick, place, and trace within timed competition rounds.
+          </p>
+          <p>
+            The team worked through concept generation, kinematic analysis, CAD modeling, component
+            selection, 3D printing, electrical integration, and testing. The final system combined one
+            stepper motor for base rotation with three servo motors for linkage motion and gripper
+            actuation.
+          </p>
+
+          <h2>Design Features</h2>
+          <div class="project-feature-showcase">
+            <div class="project-feature-column">
+              <article class="project-feature-item">
+                <p class="feature-bubble">Closed four-bar linkage selected for improved stability and simpler inverse kinematics</p>
+                <img src="images/Back_End_Closeup.jpeg" alt="Rear linkage and actuator closeup on robotic arm">
+              </article>
+
+              <article class="project-feature-item">
+                <p class="feature-bubble">Stepper-driven rotating base supported by suction cups, standoffs, and ball transfer bearings</p>
+                <img src="images/Base_Mounting.jpeg" alt="Robotic arm base with suction cups, stepper motor, and support hardware">
+              </article>
+
+              <article class="project-feature-item">
+                <p class="feature-bubble">Servo-actuated jaw gripper with geared jaws and textured contact surfaces for object handling</p>
+                <img src="images/Gripper_Closeup.jpeg" alt="Closeup of robotic arm gripper jaws and wrist servo">
+              </article>
+            </div>
+
+            <div class="project-feature-column">
+              <article class="project-feature-item">
+                <p class="feature-bubble">3D printed PLA links and structural plates reinforced with purchased screws, nuts, and spacers</p>
+                <img src="images/Swivel_Closeup.jpeg" alt="Closeup of rotating linkage and printed support structure">
+              </article>
+
+              <article class="project-feature-item">
+                <p class="feature-bubble">Arduino Mega control system integrating servos, a stepper driver, buck converter, and breadboard wiring</p>
+                <img src="images/Wiring%20Closeup.jpeg" alt="Arduino Mega, breadboard, buck converter, and wiring for robotic arm controls">
+              </article>
+
+              <article class="project-feature-item">
+                <p class="feature-bubble">20 kg and 35 kg servo motors used for linkage motion and gripper actuation under payload constraints</p>
+                <img src="images/35kg_Servo.jpeg" alt="35 kilogram servo installed on the robotic arm prototype">
+              </article>
+            </div>
+          </div>
+
+          <h2>Control Approach</h2>
+          <p>
+            The closed linkage required coordinated motion between the two primary linkage servos. The
+            team solved inverse kinematic equations for the actuated angles, tested the math in MATLAB,
+            and used a linear interpolation approach to move the gripper from a home position toward
+            task positions through discrete intermediate points.
+          </p>
+          <p>
+            The MATLAB model was used to validate that a point on the end effector could follow the
+            desired path in simulation before transferring the control logic into Arduino code for the
+            physical prototype.
+          </p>
+
+          <h2>My Role</h2>
+          <p>
+            My contributions included concept development, CAD-informed mechanical design, fabrication
+            support, actuator integration, and project documentation. The project required connecting
+            mechanical design choices to real control behavior, especially as linkage geometry, servo
+            strength, base stability, and workspace limits all affected whether the arm could complete
+            the competition tasks reliably.
+          </p>
+
+          <h2>Tools & Skills Used</h2>
+          <div class="skills-list project-skill-list">
+            <span>Robotic Design</span>
+            <span>Inverse Kinematics</span>
+            <span>MATLAB</span>
+            <span>Arduino</span>
+            <span>SolidWorks</span>
+            <span>3D Printing</span>
+            <span>Stepper Motors</span>
+            <span>Servo Motors</span>
+            <span>Motion Testing</span>
+            <span>Technical Documentation</span>
+          </div>
+
+          <div class="fabrication-strip">
+            <img src="images/20kg_Servo.jpeg" alt="20 kilogram servo installed on robotic arm linkage">
+            <img src="images/Full_Body.jpeg" alt="Completed robotic arm prototype on a table">
+          </div>
+
+          <h2>Results & Lessons Learned</h2>
+          <p>
+            The prototype successfully completed the first four competition rounds, which involved
+            simpler pick-and-drop tasks. It demonstrated a working proof of concept with sufficient
+            speed and estimated payload capacity for the block and pen tasks, but it was not able to
+            complete the final pen tracing challenge after mechanical and control issues emerged.
+          </p>
+          <p>
+            The most important lessons came from the prototype limitations. Servo gear attachments wore
+            down under repeated loading, electrical behavior caused unexpected servo jolts and heat, and
+            commanded positions did not always match physical arm motion after moving from MATLAB to
+            Arduino. Those issues made the project a useful study in the difference between a successful
+            mechanism concept and a robust competition-ready electromechanical system.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-documentation-section">
+      <div class="project-documentation">
+        <div class="section-heading">
+          <p class="eyebrow">Project Files</p>
+          <h2>Relevant Documentation</h2>
+        </div>
+
+        <div class="repo-bank">
+          <div class="repo-row">
+            <span class="repo-name"><a class="repo-download" href="documents/Final%20Report%20-%20Group%207%20-%20ME%205751.pdf" download>Final Report - Group 7 - ME 5751.pdf</a></span>
+            <span class="repo-type">PDF</span>
+            <span class="repo-size">1.53 MB</span>
+          </div>
+
+          <details class="repo-folder">
+            <summary class="repo-folder-summary">
+              <span class="repo-name">CAD</span>
+              <span class="repo-type">Folder</span>
+              <span class="repo-size">32 files</span>
+            </summary>
+
+            <div class="repo-folder-contents">
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/FinalAssem_v1.SLDASM" download>FinalAssem_v1.SLDASM</a></span><span class="repo-type">SLDASM</span><span class="repo-size">8.43 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Arm%20Base.SLDPRT" download>Arm Base.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">135 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/BasePlate.SLDPRT" download>BasePlate.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">93 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/GripperDesign.SLDPRT" download>GripperDesign.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">414 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/GripperDesign_R.SLDPRT" download>GripperDesign_R.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">426 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/L1.SLDPRT" download>L1.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">64 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/L2.SLDPRT" download>L2.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">69 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/L3.SLDPRT" download>L3.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">73 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/L4_V2.SLDPRT" download>L4_V2.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">104 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/L5.SLDPRT" download>L5.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">65 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/LinkBoard_rec.SLDPRT" download>LinkBoard_rec.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">80 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/LinkBoard_tri.SLDPRT" download>LinkBoard_tri.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">75 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/SampleServo.SLDPRT" download>SampleServo.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">98 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Servo%20Connector.SLDPRT" download>Servo Connector.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">105 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/StepMotor%20Connector.SLDPRT" download>StepMotor Connector.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">102 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Stepper%20Motor.SLDPRT" download>Stepper Motor.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">2.49 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Stud-Mount%20Ball%20Transfer.SLDPRT" download>Stud-Mount Ball Transfer.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">868 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/SupportCM.SLDASM" download>SupportCM.SLDASM</a></span><span class="repo-type">SLDASM</span><span class="repo-size">88 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/SupportCM_1.SLDPRT" download>SupportCM_1.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">68 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/SupportCM_2_assem.SLDPRT" download>SupportCM_2_assem.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">147 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/SupportPlate.SLDPRT" download>SupportPlate.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">121 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Threaded%20Suction%20Cup%2050mm.SLDPRT" download>Threaded Suction Cup 50mm.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">1.58 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/WristBoard%26Fixlink.SLDASM" download>WristBoard&amp;Fixlink.SLDASM</a></span><span class="repo-type">SLDASM</span><span class="repo-size">83 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/WristBoard_Bottom.SLDPRT" download>WristBoard_Bottom.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">93 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/WristBoard_V2.SLDPRT" download>WristBoard_V2.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">122 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/M6%20Steel%20Hex%20Nut.SLDPRT" download>M6 Steel Hex Nut.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">440 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Male-Female%20Threaded%20Hex%20Standoff%20M6x15.SLDPRT" download>Male-Female Threaded Hex Standoff M6x15.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">1020 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Male-Female%20Threaded%20Hex%20Standoff%20M6x35.SLDPRT" download>Male-Female Threaded Hex Standoff M6x35.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">1.04 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Socket%20Head%20Screw%20M6x25.SLDPRT" download>Socket Head Screw M6x25.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">1009 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Alloy%20Steel%20Socket%20Head%20Screw%20M5x8.SLDPRT" download>Alloy Steel Socket Head Screw M5x8.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">513 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Alloy%20Steel%20Socket%20Head%20Screw%20M6x10.SLDPRT" download>Alloy Steel Socket Head Screw M6x10.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">513 KB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/CAD/Alloy%20Steel%20Socket%20Head%20Screw%20M6x12.SLDPRT" download>Alloy Steel Socket Head Screw M6x12.SLDPRT</a></span><span class="repo-type">SLDPRT</span><span class="repo-size">574 KB</span></div>
+            </div>
+          </details>
+
+          <details class="repo-folder">
+            <summary class="repo-folder-summary">
+              <span class="repo-name">Arm Control Version 10</span>
+              <span class="repo-type">Folder</span>
+              <span class="repo-size">1 file</span>
+            </summary>
+
+            <div class="repo-folder-contents">
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Arm_Control_Version_10/Arm_Control_Version_10.ino" download>Arm_Control_Version_10.ino</a></span><span class="repo-type">INO</span><span class="repo-size">39 KB</span></div>
+            </div>
+          </details>
+
+          <details class="repo-folder">
+            <summary class="repo-folder-summary">
+              <span class="repo-name">Prototype Photos</span>
+              <span class="repo-type">Folder</span>
+              <span class="repo-size">12 files</span>
+            </summary>
+
+            <div class="repo-folder-contents">
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011100-9696a164.jpeg" download>image-20250429-011100-9696a164.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">3.09 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011110-d4ec90b9.jpeg" download>image-20250429-011110-d4ec90b9.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">3.03 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011115-7e55ef69.jpeg" download>image-20250429-011115-7e55ef69.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">3.10 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011120-7bd47b61.jpeg" download>image-20250429-011120-7bd47b61.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">2.88 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011130-2dcbd9d2.jpeg" download>image-20250429-011130-2dcbd9d2.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">3.30 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011155-4f8ee539.jpeg" download>image-20250429-011155-4f8ee539.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">3.29 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011307-f3041f31.jpeg" download>image-20250429-011307-f3041f31.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">2.37 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011337-78f5a7a4.jpeg" download>image-20250429-011337-78f5a7a4.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">2.39 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011421-23e3de47.jpeg" download>image-20250429-011421-23e3de47.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">2.78 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-011444-2348beeb.jpeg" download>image-20250429-011444-2348beeb.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">3.15 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-023504-bf0f9aee.jpeg" download>image-20250429-023504-bf0f9aee.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">4.11 MB</span></div>
+              <div class="repo-row"><span class="repo-name"><a class="repo-download" href="documents/Prototype%20Photos/image-20250429-023520-b065e439.jpeg" download>image-20250429-023520-b065e439.jpeg</a></span><span class="repo-type">JPEG</span><span class="repo-size">4.06 MB</span></div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-acknowledgements">
+    <p>Acknowledgements:</p>
+  </footer>
+</body>
+</html>
