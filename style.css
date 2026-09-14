@@ -229,6 +229,10 @@ a {
   color: var(--text-muted);
 }
 
+.project-subsection-heading {
+  margin-top: 54px;
+}
+
 /* =========================
    STACKED HORIZONTAL PROJECT CARDS
    Wide project cards stacked vertically, with image left and text right.
