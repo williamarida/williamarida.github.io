@@ -934,8 +934,8 @@ article.project-card {
 
 }
 
-/* Phone layout adjustments. */
-@media (max-width: 720px) {
+/* Phone portrait layout adjustments. */
+@media (max-width: 720px) and (orientation: portrait) {
   /* Navbar stacks vertically on small screens. */
   .navbar {
     align-items: flex-start;
@@ -964,24 +964,24 @@ article.project-card {
     font-size: clamp(2.35rem, 14vw, 4rem);
   }
 
-  /* Project cards keep the desktop image/text split on phones. */
+  /* Project cards stack on phones: image above, words below. */
   .project-card {
-    grid-template-columns: minmax(108px, 36%) minmax(0, 1fr);
+    grid-template-columns: 1fr;
     min-height: 0;
   }
 
-  /* Images stay in their own column so card text never sits over them. */
+  /* Images become a horizontal band above the card text on phones. */
   .project-image,
   .placeholder {
-    min-height: 0;
-    height: 100%;
-    border-right: 1px solid var(--border);
-    border-bottom: none;
+    min-height: 210px;
+    height: 210px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
   }
 
   /* Project card text gets slightly smaller padding on phones. */
   .project-content {
-    padding: 18px;
+    padding: 22px;
   }
 
   /* Project metadata stacks on phones. */
