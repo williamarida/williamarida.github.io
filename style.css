@@ -701,6 +701,13 @@ article.project-card {
   margin-top: 18px;
 }
 
+.single-column-showcase {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-feature-column {
   display: grid;
   gap: 18px;
