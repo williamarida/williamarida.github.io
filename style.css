@@ -4,10 +4,13 @@
    ========================= */
 
 :root {
-  --bg: #080d14;
-  --bg-soft: #0e1623;
-  --bg-card: #121c2b;
-  --bg-card-light: #18263a;
+  --bg: #06111d;
+  --bg-soft: #0a1a2a;
+  --bg-card: #101c2a;
+  --bg-card-light: #17283a;
+  --bg-panel-gray: #20262f;
+  --steel-blue: #20364b;
+  --steel-blue-soft: #2b465e;
 
   --text-main: #f4f7fb;
   --text-soft: #d8e0ee;
@@ -17,10 +20,13 @@
   --accent-strong: #ffc078;
   --accent-warm: #f5b84b;
 
-  --border: rgba(255, 255, 255, 0.12);
+  --border: rgba(180, 210, 236, 0.13);
   --border-strong: rgba(255, 138, 61, 0.32);
+  --blue-border: rgba(96, 145, 181, 0.24);
+  --blue-line: rgba(118, 171, 207, 0.16);
+  --accent-glow: rgba(255, 138, 61, 0.18);
 
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.36);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
   --max-width: 1220px;
 
   --radius-lg: 26px;
@@ -45,9 +51,11 @@ body {
   font-size: 17px;
   color: var(--text-main);
   background:
-    radial-gradient(circle at top left, rgba(255, 138, 61, 0.14), transparent 34%),
-    radial-gradient(circle at top right, rgba(245, 184, 75, 0.08), transparent 28%),
-    linear-gradient(180deg, #080d14 0%, #0b111c 48%, #080d14 100%);
+    linear-gradient(118deg, transparent 0 58%, rgba(118, 171, 207, 0.055) 58% 58.35%, transparent 58.35%),
+    linear-gradient(142deg, transparent 0 18%, rgba(255, 138, 61, 0.035) 18% 18.25%, transparent 18.25%),
+    linear-gradient(104deg, rgba(255, 138, 61, 0.09), transparent 34%),
+    linear-gradient(248deg, rgba(72, 114, 148, 0.16), transparent 38%),
+    linear-gradient(180deg, #06111d 0%, #0a1a2a 46%, #07131f 100%);
   line-height: 1.6;
 }
 
@@ -74,7 +82,9 @@ a {
   top: 0;
   z-index: 20;
   color: white;
-  background: rgba(8, 13, 20, 0.78);
+  background:
+    linear-gradient(90deg, rgba(255, 138, 61, 0.045), transparent 34%),
+    rgba(6, 17, 29, 0.82);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(18px);
 }
@@ -152,16 +162,32 @@ a {
 
 /* Main hero layout. */
 .hero {
+  position: relative;
+  overflow: hidden;
   max-width: none;
   padding: 105px 24px 58px;
   border-bottom: 1px solid var(--border);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
+    linear-gradient(122deg, rgba(255, 138, 61, 0.12), transparent 26%),
+    linear-gradient(150deg, transparent 0 62%, rgba(91, 143, 181, 0.13) 62% 64%, transparent 64%),
+    linear-gradient(180deg, rgba(23, 40, 58, 0.62), rgba(10, 26, 42, 0.20));
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, transparent 0 76%, rgba(255, 138, 61, 0.16) 76% 76.4%, transparent 76.4%),
+    linear-gradient(135deg, transparent 0 68%, rgba(118, 171, 207, 0.10) 68% 68.25%, transparent 68.25%);
+  pointer-events: none;
 }
 
 /* Limits the width of hero text so it stays readable. */
 .hero-content,
 .hero-text {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
@@ -221,10 +247,12 @@ a {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center top;
-  border: 1px solid var(--border);
+  border: 1px solid var(--blue-border);
   border-radius: var(--radius-lg);
   background: var(--bg-card-light);
-  box-shadow: var(--shadow);
+  box-shadow:
+    -12px 12px 0 rgba(255, 138, 61, 0.12),
+    var(--shadow);
 }
 
 /* =========================
@@ -251,6 +279,17 @@ a {
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1;
   letter-spacing: -0.045em;
+}
+
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 3px;
+  margin-top: 16px;
+  background:
+    linear-gradient(90deg, var(--accent), rgba(118, 171, 207, 0.74), transparent);
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
 }
 
 /* Supporting paragraph under section headings. */
@@ -288,7 +327,8 @@ a {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    linear-gradient(135deg, rgba(118, 171, 207, 0.10), rgba(255, 255, 255, 0.018)),
+    linear-gradient(148deg, transparent 0 78%, rgba(255, 138, 61, 0.11) 78% 79%, transparent 79%),
     var(--bg-card);
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.24);
   transition:
@@ -303,18 +343,35 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(255, 138, 61, 0.08), transparent 42%),
-    radial-gradient(circle at top right, rgba(255, 138, 61, 0.08), transparent 28%);
+    linear-gradient(90deg, rgba(255, 138, 61, 0.09), transparent 42%),
+    linear-gradient(235deg, rgba(73, 120, 154, 0.16), transparent 34%);
   opacity: 0;
+  z-index: 0;
   transition: opacity 0.22s ease;
+  pointer-events: none;
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 76px;
+  height: 18px;
+  background: linear-gradient(90deg, transparent, rgba(255, 138, 61, 0.45));
+  clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+  opacity: 0.45;
+  z-index: 0;
   pointer-events: none;
 }
 
 /* Project card hover movement and border glow. */
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 138, 61, 0.38);
-  box-shadow: 0 28px 85px rgba(0, 0, 0, 0.40);
+  border-color: rgba(255, 138, 61, 0.42);
+  box-shadow:
+    0 28px 85px rgba(0, 0, 0, 0.42),
+    0 0 0 1px rgba(118, 171, 207, 0.10);
 }
 
 /* Turns on the glow overlay when hovering over a card. */
@@ -334,7 +391,7 @@ a {
   min-height: 245px;
   object-fit: cover;
   background: var(--bg-card-light);
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--blue-border);
   transition:
     transform 0.35s ease,
     filter 0.35s ease;
@@ -409,8 +466,9 @@ a {
   padding: 5px 8px;
   border-radius: 999px;
   color: var(--text-soft);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border);
+  background:
+    linear-gradient(120deg, rgba(118, 171, 207, 0.12), rgba(255, 255, 255, 0.035));
+  border: 1px solid var(--blue-border);
   white-space: nowrap;
 }
 
@@ -446,8 +504,9 @@ a {
   padding: 6px 10px;
   border-radius: 999px;
   color: var(--text-soft);
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid var(--border);
+  background:
+    linear-gradient(112deg, rgba(255, 138, 61, 0.12) 0 7px, rgba(118, 171, 207, 0.095) 7px, rgba(255, 255, 255, 0.035));
+  border: 1px solid var(--blue-border);
   font-size: 0.83rem;
   font-weight: 750;
 }
@@ -488,16 +547,21 @@ article.project-card {
 
 /* Full-width skills band with subtle borders. */
 .skills-section {
+  position: relative;
+  overflow: hidden;
   max-width: none;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
+    linear-gradient(132deg, transparent 0 64%, rgba(255, 138, 61, 0.05) 64% 64.5%, transparent 64.5%),
+    linear-gradient(180deg, rgba(32, 54, 75, 0.36), rgba(20, 31, 43, 0.16));
 }
 
 /* Keeps skills section content aligned with the rest of the site. */
 .skills-section .section-heading,
 .skills-section .skills-list {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
@@ -522,7 +586,8 @@ article.project-card {
 .skills-list span:hover {
   transform: translateY(-3px);
   border-color: rgba(255, 138, 61, 0.42);
-  background: rgba(255, 138, 61, 0.08);
+  background:
+    linear-gradient(112deg, rgba(255, 138, 61, 0.18) 0 8px, rgba(118, 171, 207, 0.13) 8px, rgba(255, 255, 255, 0.055));
 }
 
 /* =========================
@@ -537,15 +602,36 @@ article.project-card {
 
 /* Large contact card wrapper. */
 .contact-card {
+  position: relative;
+  overflow: hidden;
   padding: 38px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 138, 61, 0.22);
   background:
-    radial-gradient(circle at top left, rgba(255, 138, 61, 0.17), transparent 32%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.025)),
+    linear-gradient(138deg, transparent 0 72%, rgba(118, 171, 207, 0.10) 72% 73%, transparent 73%),
+    linear-gradient(112deg, rgba(255, 138, 61, 0.15), transparent 34%),
+    linear-gradient(135deg, rgba(118, 171, 207, 0.09), rgba(255, 255, 255, 0.02)),
     var(--bg-card);
   box-shadow: var(--shadow);
   text-align: left;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  right: 28px;
+  top: 28px;
+  width: 108px;
+  height: 24px;
+  background: linear-gradient(90deg, rgba(118, 171, 207, 0.10), rgba(255, 138, 61, 0.34));
+  clip-path: polygon(18% 0, 100% 0, 82% 100%, 0% 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contact-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Contact card heading. */
@@ -578,9 +664,10 @@ article.project-card {
   justify-content: center;
   padding: 11px 14px;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--blue-border);
   color: var(--text-soft);
-  background: rgba(255, 255, 255, 0.045);
+  background:
+    linear-gradient(122deg, rgba(255, 138, 61, 0.10), rgba(118, 171, 207, 0.075));
   appearance: none;
   -webkit-appearance: none;
   font: inherit;
@@ -598,7 +685,8 @@ article.project-card {
 .contact-action.is-copied {
   transform: translateY(-2px);
   border-color: rgba(255, 138, 61, 0.45);
-  background: rgba(255, 138, 61, 0.08);
+  background:
+    linear-gradient(122deg, rgba(255, 138, 61, 0.16), rgba(118, 171, 207, 0.11));
 }
 
 /* Revealed email address after visitors press the email button. */
@@ -624,6 +712,8 @@ article.project-card {
   color: var(--text-muted);
   text-align: center;
   font-size: 0.9rem;
+  background:
+    linear-gradient(90deg, rgba(118, 171, 207, 0.08), transparent 45%, rgba(255, 138, 61, 0.045));
 }
 
 /* =========================
@@ -633,15 +723,30 @@ article.project-card {
 
 /* Project page hero section. */
 .project-hero {
+  position: relative;
+  overflow: hidden;
   color: white;
   padding: 92px 24px;
   background:
-    radial-gradient(circle at top left, rgba(255, 138, 61, 0.16), transparent 34%),
-    linear-gradient(135deg, #0b1220, #111d2f);
+    linear-gradient(142deg, transparent 0 68%, rgba(255, 138, 61, 0.10) 68% 68.45%, transparent 68.45%),
+    linear-gradient(112deg, rgba(255, 138, 61, 0.14), transparent 36%),
+    linear-gradient(302deg, rgba(118, 171, 207, 0.17), transparent 38%),
+    linear-gradient(135deg, #06111d, #102338);
+}
+
+.project-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(132deg, transparent 0 76%, rgba(118, 171, 207, 0.11) 76% 76.3%, transparent 76.3%);
+  pointer-events: none;
 }
 
 /* Project hero with a visual anchor image. */
 .project-hero-with-image {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
@@ -661,7 +766,7 @@ article.project-card {
   justify-self: end;
   height: auto;
   object-fit: contain;
-  border: 1px solid rgba(255, 138, 61, 0.24);
+  border: 1px solid rgba(255, 138, 61, 0.26);
   border-radius: var(--radius-lg);
   background: var(--bg-card-light);
   box-shadow: var(--shadow);
@@ -744,22 +849,40 @@ article.project-card {
 }
 
 .project-feature-item {
+  position: relative;
   display: grid;
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+    linear-gradient(142deg, transparent 0 76%, rgba(255, 138, 61, 0.08) 76% 77%, transparent 77%),
+    linear-gradient(135deg, rgba(118, 171, 207, 0.09), rgba(255, 255, 255, 0.022)),
     var(--bg-card);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
   align-content: start;
 }
 
+.project-feature-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 86px;
+  height: 18px;
+  background: linear-gradient(90deg, rgba(118, 171, 207, 0.15), rgba(255, 138, 61, 0.38));
+  clip-path: polygon(16% 0, 100% 0, 84% 100%, 0% 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .feature-bubble {
+  position: relative;
+  z-index: 1;
   margin: 0;
   padding: 14px 16px;
   color: var(--text-soft);
-  background: rgba(255, 255, 255, 0.045);
+  background:
+    linear-gradient(90deg, rgba(255, 138, 61, 0.105), rgba(118, 171, 207, 0.075));
   border-bottom: 1px solid var(--border);
   font-weight: 750;
 }
@@ -806,18 +929,21 @@ article.project-card {
   aspect-ratio: 3 / 2;
   object-fit: cover;
   object-position: top center;
-  border: 1px solid var(--border);
+  border: 1px solid var(--blue-border);
   border-radius: var(--radius-md);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
 }
 
 /* Repository-style project documentation bank. */
 .project-documentation-section {
+  position: relative;
+  overflow: hidden;
   max-width: none;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
+    linear-gradient(138deg, transparent 0 66%, rgba(118, 171, 207, 0.085) 66% 66.35%, transparent 66.35%),
+    linear-gradient(180deg, rgba(32, 54, 75, 0.32), rgba(15, 28, 42, 0.18));
 }
 
 .project-documentation {
@@ -830,7 +956,9 @@ article.project-card {
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  background: rgba(18, 28, 43, 0.82);
+  background:
+    linear-gradient(135deg, rgba(118, 171, 207, 0.07), rgba(255, 255, 255, 0.015)),
+    rgba(16, 28, 42, 0.90);
   box-shadow: var(--shadow);
 }
 
@@ -877,7 +1005,7 @@ article.project-card {
 
 .repo-folder-contents {
   border-bottom: 1px solid var(--border);
-  background: rgba(8, 13, 20, 0.22);
+  background: rgba(6, 17, 29, 0.30);
 }
 
 .repo-folder-contents .repo-row {
@@ -927,6 +1055,8 @@ article.project-card {
   color: var(--text-muted);
   text-align: center;
   font-size: 0.9rem;
+  background:
+    linear-gradient(90deg, rgba(118, 171, 207, 0.08), transparent 45%, rgba(255, 138, 61, 0.045));
 }
 
 /* =========================
