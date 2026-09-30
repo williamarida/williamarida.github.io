@@ -16,16 +16,16 @@
   --text-soft: #d8e0ee;
   --text-muted: #9facbf;
 
-  --accent: #ff8a3d;
-  --accent-strong: #ffc078;
-  --accent-warm: #f5b84b;
+  --accent: #ff6418;
+  --accent-strong: #ffb15f;
+  --accent-warm: #ff9f2f;
   --action-text: #07111d;
 
   --border: rgba(180, 210, 236, 0.13);
-  --border-strong: rgba(255, 138, 61, 0.32);
+  --border-strong: rgba(255, 100, 24, 0.32);
   --blue-border: rgba(96, 145, 181, 0.24);
   --blue-line: rgba(118, 171, 207, 0.16);
-  --accent-glow: rgba(255, 138, 61, 0.18);
+  --accent-glow: rgba(255, 100, 24, 0.18);
 
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
   --max-width: 1220px;
@@ -58,7 +58,7 @@ body {
   background:
     linear-gradient(rgba(180, 210, 236, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(180, 210, 236, 0.035) 1px, transparent 1px),
-    linear-gradient(104deg, rgba(255, 138, 61, 0.09), transparent 34%),
+    linear-gradient(104deg, rgba(255, 100, 24, 0.09), transparent 34%),
     linear-gradient(248deg, rgba(72, 114, 148, 0.16), transparent 38%),
     linear-gradient(180deg, #06111d 0%, #0a1a2a 46%, #07131f 100%);
   background-size: 52px 52px, 52px 52px, auto, auto, auto;
@@ -103,7 +103,7 @@ textarea {
   z-index: 20;
   color: white;
   background:
-    linear-gradient(90deg, rgba(255, 138, 61, 0.045), transparent 34%),
+    linear-gradient(90deg, rgba(255, 100, 24, 0.045), transparent 34%),
     rgba(6, 17, 29, 0.82);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(18px);
@@ -216,7 +216,7 @@ textarea {
   padding: 105px 24px 58px;
   border-bottom: 1px solid var(--border);
   background:
-    linear-gradient(122deg, rgba(255, 138, 61, 0.12), transparent 26%),
+    linear-gradient(122deg, rgba(255, 100, 24, 0.12), transparent 26%),
     linear-gradient(180deg, rgba(23, 40, 58, 0.62), rgba(10, 26, 42, 0.20));
 }
 
@@ -296,7 +296,7 @@ textarea {
   border-radius: var(--radius-lg);
   background: var(--bg-card-light);
   box-shadow:
-    -12px 12px 0 rgba(255, 138, 61, 0.12),
+    -12px 12px 0 rgba(255, 100, 24, 0.12),
     var(--shadow);
 }
 
@@ -375,11 +375,11 @@ textarea {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
-  border: 1px solid rgba(255, 138, 61, 0.32);
+  border: 1px solid rgba(255, 100, 24, 0.32);
   border-left: 8px solid var(--accent);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(90deg, rgba(255, 138, 61, 0.22), transparent 34px),
+    linear-gradient(90deg, rgba(255, 100, 24, 0.22), transparent 34px),
     linear-gradient(135deg, rgba(118, 171, 207, 0.10), rgba(255, 255, 255, 0.018)),
     var(--bg-card);
   box-shadow: 0 18px 55px rgba(0, 0, 0, 0.24);
@@ -395,7 +395,7 @@ textarea {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(255, 138, 61, 0.09), transparent 42%),
+    linear-gradient(90deg, rgba(255, 100, 24, 0.09), transparent 42%),
     linear-gradient(235deg, rgba(73, 120, 154, 0.16), transparent 34%);
   opacity: 0;
   z-index: 0;
@@ -419,7 +419,7 @@ textarea {
 /* Project card hover movement and border glow. */
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 138, 61, 0.54);
+  border-color: rgba(255, 100, 24, 0.54);
   box-shadow:
     0 28px 85px rgba(0, 0, 0, 0.42),
     0 0 0 1px rgba(118, 171, 207, 0.10);
@@ -467,7 +467,7 @@ textarea {
   text-transform: uppercase;
   border-right: 1px solid var(--border);
   background:
-    linear-gradient(135deg, rgba(255, 138, 61, 0.13), transparent 42%),
+    linear-gradient(135deg, rgba(255, 100, 24, 0.13), transparent 42%),
     var(--bg-card-light);
 }
 
@@ -485,7 +485,7 @@ textarea {
 .project-topline {
   margin: 16px 26px 0;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 138, 61, 0.26);
+  border-bottom: 1px solid rgba(255, 100, 24, 0.26);
   display: flex;
   justify-content: space-between;
   gap: 14px;
@@ -515,9 +515,19 @@ textarea {
   border-radius: 0;
   color: var(--accent-strong);
   background:
-    linear-gradient(120deg, rgba(255, 138, 61, 0.16), rgba(255, 138, 61, 0.055));
-  border: 1px solid rgba(255, 138, 61, 0.38);
+    linear-gradient(120deg, rgba(255, 100, 24, 0.16), rgba(255, 100, 24, 0.055));
+  border: 1px solid rgba(255, 100, 24, 0.38);
   white-space: nowrap;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-card:hover .project-status {
+  color: var(--action-text);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 /* Project title. */
@@ -564,8 +574,8 @@ textarea {
   color: var(--text-soft);
   font-family: var(--font-mono);
   background:
-    linear-gradient(112deg, rgba(255, 138, 61, 0.16), rgba(255, 138, 61, 0.055));
-  border: 1px solid rgba(255, 138, 61, 0.32);
+    linear-gradient(112deg, rgba(255, 100, 24, 0.16), rgba(255, 100, 24, 0.055));
+  border: 1px solid rgba(255, 100, 24, 0.32);
   font-size: 0.83rem;
   font-weight: 750;
   text-transform: uppercase;
@@ -580,8 +590,9 @@ textarea {
   width: fit-content;
   margin: auto 26px 24px;
   padding: 10px 14px;
-  color: var(--action-text);
-  background: var(--accent);
+  color: var(--accent-strong);
+  background:
+    linear-gradient(120deg, rgba(255, 100, 24, 0.13), rgba(255, 100, 24, 0.045));
   border: 1px solid var(--accent);
   font-family: var(--font-mono);
   font-size: 0.82rem;
@@ -597,8 +608,8 @@ textarea {
 /* Moves the project link text slightly right on hover. */
 .project-card:hover .project-link {
   transform: translateX(4px);
-  color: var(--text-main);
-  background: transparent;
+  color: var(--action-text);
+  background: var(--accent);
 }
 
 /* Styling for coming soon links/cards. */
@@ -656,9 +667,9 @@ article.project-card {
 /* Skill tags lift and glow slightly on hover. */
 .skills-list span:hover {
   transform: translateY(-3px);
-  border-color: rgba(255, 138, 61, 0.42);
+  border-color: rgba(255, 100, 24, 0.42);
   background:
-    linear-gradient(112deg, rgba(255, 138, 61, 0.20), rgba(255, 138, 61, 0.08));
+    linear-gradient(112deg, rgba(255, 100, 24, 0.20), rgba(255, 100, 24, 0.08));
 }
 
 /* =========================
@@ -677,9 +688,9 @@ article.project-card {
   overflow: hidden;
   padding: 38px;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 138, 61, 0.22);
+  border: 1px solid rgba(255, 100, 24, 0.22);
   background:
-    linear-gradient(112deg, rgba(255, 138, 61, 0.15), transparent 34%),
+    linear-gradient(112deg, rgba(255, 100, 24, 0.15), transparent 34%),
     linear-gradient(135deg, rgba(118, 171, 207, 0.09), rgba(255, 255, 255, 0.02)),
     var(--bg-card);
   box-shadow: var(--shadow);
@@ -791,7 +802,7 @@ article.project-card {
   color: white;
   padding: 92px 24px;
   background:
-    linear-gradient(112deg, rgba(255, 138, 61, 0.14), transparent 36%),
+    linear-gradient(112deg, rgba(255, 100, 24, 0.14), transparent 36%),
     linear-gradient(302deg, rgba(118, 171, 207, 0.17), transparent 38%),
     linear-gradient(135deg, #06111d, #102338);
 }
@@ -824,7 +835,8 @@ article.project-card {
   height: auto;
   object-fit: contain;
   clip-path: polygon(0 0, calc(100% - var(--panel-cut)) 0, 100% var(--panel-cut), 100% 100%, 0 100%);
-  border: 1px solid rgba(255, 138, 61, 0.26);
+  border: 1px solid rgba(255, 100, 24, 0.26);
+  border-left: 8px solid var(--accent);
   border-radius: var(--radius-lg);
   background: var(--bg-card-light);
   box-shadow: var(--shadow);
@@ -838,7 +850,18 @@ article.project-card {
   letter-spacing: 0;
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
+}
+
+.project-hero h1::after {
+  content: "";
+  display: block;
+  width: min(360px, 72%);
+  height: 3px;
+  margin-top: 18px;
+  background:
+    linear-gradient(90deg, var(--accent), rgba(118, 171, 207, 0.78), transparent);
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
 }
 
 /* Project page hero paragraph. */
@@ -916,11 +939,11 @@ article.project-card {
   display: grid;
   overflow: hidden;
   clip-path: polygon(0 0, calc(100% - var(--panel-cut)) 0, 100% var(--panel-cut), 100% 100%, 0 100%);
-  border: 1px solid rgba(255, 138, 61, 0.28);
+  border: 1px solid rgba(255, 100, 24, 0.28);
   border-left: 6px solid var(--accent);
   border-radius: var(--radius-md);
   background:
-    linear-gradient(90deg, rgba(255, 138, 61, 0.14), transparent 28px),
+    linear-gradient(90deg, rgba(255, 100, 24, 0.14), transparent 28px),
     linear-gradient(135deg, rgba(118, 171, 207, 0.09), rgba(255, 255, 255, 0.022)),
     var(--bg-card);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22);
@@ -945,11 +968,10 @@ article.project-card {
   z-index: 1;
   margin: 0;
   padding: 14px 16px 14px 18px;
-  color: var(--accent-strong);
+  color: var(--action-text);
   font-family: var(--font-mono);
-  background:
-    linear-gradient(90deg, rgba(255, 138, 61, 0.15), rgba(255, 138, 61, 0.055));
-  border-bottom: 1px solid rgba(255, 138, 61, 0.30);
+  background: var(--accent);
+  border-bottom: 1px solid var(--accent);
   font-weight: 750;
   text-transform: uppercase;
   letter-spacing: 0.035em;
@@ -1023,7 +1045,7 @@ article.project-card {
 .repo-bank {
   overflow: hidden;
   clip-path: polygon(0 0, calc(100% - var(--panel-cut)) 0, 100% var(--panel-cut), 100% 100%, 0 100%);
-  border: 1px solid rgba(255, 138, 61, 0.24);
+  border: 1px solid rgba(255, 100, 24, 0.24);
   border-radius: var(--radius-md);
   background:
     linear-gradient(135deg, rgba(118, 171, 207, 0.07), rgba(255, 255, 255, 0.015)),
