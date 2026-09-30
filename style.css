@@ -19,7 +19,7 @@
   --accent: #ff6418;
   --accent-strong: #ffb15f;
   --accent-warm: #ff9f2f;
-  --action-text: #07111d;
+  --action-text: #121820;
 
   --border: rgba(180, 210, 236, 0.13);
   --border-strong: rgba(255, 100, 24, 0.32);
@@ -968,7 +968,7 @@ article.project-card {
   z-index: 1;
   margin: 0;
   padding: 14px 16px 14px 18px;
-  color: var(--action-text);
+  color: var(--text-main);
   font-family: var(--font-mono);
   background: var(--accent);
   border-bottom: 1px solid var(--accent);
