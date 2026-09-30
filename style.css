@@ -171,6 +171,17 @@ a {
   max-width: 760px;
 }
 
+.hero-with-portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 46px;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 760px;
+}
+
 /* Small uppercase label used above section titles. */
 .eyebrow {
   margin: 0 0 14px;
@@ -189,12 +200,31 @@ a {
   letter-spacing: -0.06em;
 }
 
+.hero-credential {
+  margin: 18px 0 0;
+  color: var(--text-soft);
+  font-size: clamp(1.08rem, 2.2vw, 1.45rem);
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
 /* Supporting paragraph below the hero headline. */
 .hero-description {
   max-width: 690px;
   margin-top: 28px;
   color: var(--text-soft);
   font-size: 1.08rem;
+}
+
+.hero-portrait {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card-light);
+  box-shadow: var(--shadow);
 }
 
 /* =========================
@@ -910,6 +940,14 @@ article.project-card {
     padding-top: 78px;
   }
 
+  .hero-with-portrait {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-portrait {
+    max-width: 360px;
+  }
+
   /* Project cards keep horizontal layout but shrink the image column. */
   .project-card {
     grid-template-columns: 260px minmax(0, 1fr);
@@ -969,6 +1007,10 @@ article.project-card {
   /* Keeps the hero headline large but manageable on phones. */
   .hero h1 {
     font-size: clamp(2.35rem, 14vw, 4rem);
+  }
+
+  .hero-portrait {
+    max-width: 100%;
   }
 
   /* Project cards stack on phones: image above, words below. */
