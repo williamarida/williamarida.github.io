@@ -826,10 +826,10 @@ article.project-card {
   z-index: 1;
   margin: 0;
   padding: 14px 16px;
-  color: var(--text-soft);
+  color: var(--accent-strong);
   background:
-    linear-gradient(90deg, rgba(255, 138, 61, 0.105), rgba(118, 171, 207, 0.075));
-  border-bottom: 1px solid var(--border);
+    linear-gradient(90deg, rgba(255, 138, 61, 0.15), rgba(255, 138, 61, 0.055));
+  border-bottom: 1px solid rgba(255, 138, 61, 0.30);
   font-weight: 750;
 }
 
