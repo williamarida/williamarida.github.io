@@ -968,7 +968,7 @@ article.project-card {
   z-index: 1;
   margin: 0;
   padding: 14px 16px 14px 18px;
-  color: #ffffff;
+  color: var(--action-text);
   font-family: var(--font-mono);
   background: var(--accent);
   border-bottom: 1px solid var(--accent);
