@@ -963,7 +963,7 @@ article.project-card {
   pointer-events: none;
 }
 
-.feature-bubble {
+.project-page .feature-bubble {
   position: relative;
   z-index: 1;
   margin: 0;
